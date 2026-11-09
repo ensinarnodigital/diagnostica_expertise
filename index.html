@@ -1,0 +1,846 @@
+<!-- Diagnóstico Rápido de Expertise — versão para systeme.io
+     Cole todo este conteúdo em um elemento de código HTML personalizado (Custom Code) de uma seção em largura total. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Fira+Sans:wght@400;500;600;700&display=swap');
+#expertise-kit{all:initial;display:block;}
+#expertise-kit h4,#expertise-kit p,#expertise-kit label,#expertise-kit span,#expertise-kit div,#expertise-kit li,#expertise-kit small,#expertise-kit b,#expertise-kit i{font-family:inherit;font-size:inherit;line-height:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;text-align:inherit;}
+#expertise-kit p,#expertise-kit label,#expertise-kit span,#expertise-kit div,#expertise-kit li{font-weight:inherit;}
+#expertise-kit h4{font-weight:700;}
+#expertise-kit ul{list-style:disc;}
+#expertise-kit input,#expertise-kit textarea{height:auto;min-height:0;max-height:none;margin:0;}
+#expertise-kit input,#expertise-kit textarea,#expertise-kit button{text-transform:none;letter-spacing:normal;word-spacing:normal;text-indent:0;text-shadow:none;}
+#expertise-kit header{display:block;position:static;float:none;width:auto;height:auto;min-height:0;border:0;box-shadow:none;background:none;transform:none;}
+#expertise-kit{
+  --bg:#fbf7ef; --card:#ffffff; --cream:#faf2e1; --sand:#f3e9d4; --border:#e6d9c1; --border2:#d3c3a4;
+  --brown:#8a7456; --brown-d:#5e4d38; --ink:#2b2418; --text:#3d3426; --muted:#6f6454;
+  --green:#2f7d4b; --green-l:#e6f3ea; --green-b:#9ccdb0;
+  --yellow:#8f6c00; --yellow-l:#fbf3d6; --yellow-b:#e2c866;
+  --orange:#b05512; --orange-l:#fbeadb; --orange-b:#e8b284;
+  --red:#a8352c; --red-l:#fae3e0; --red-b:#e3a39d;
+  --shadow:0 2px 20px rgba(60,45,25,.08);
+}
+#expertise-kit,#expertise-kit *{box-sizing:border-box;margin:0;padding:0}
+#expertise-kit{font-family:'Fira Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.65}
+#expertise-kit .band-green{--c:var(--green);--cl:var(--green-l);--cb:var(--green-b)}
+#expertise-kit .band-yellow{--c:var(--yellow);--cl:var(--yellow-l);--cb:var(--yellow-b)}
+#expertise-kit .band-orange{--c:var(--orange);--cl:var(--orange-l);--cb:var(--orange-b)}
+#expertise-kit .band-red{--c:var(--red);--cl:var(--red-l);--cb:var(--red-b)}
+#expertise-kit .hero{display:flex;min-height:190px;background:var(--cream);overflow:hidden;position:relative}
+#expertise-kit .hero-art{flex:0 0 26%;max-width:250px;background:var(--brown);display:flex;align-items:center;justify-content:center;position:relative}
+#expertise-kit .hero-art::after{content:'';position:absolute;right:-70px;top:-40px;bottom:-40px;width:130px;border-radius:50%;background:var(--cream)}
+#expertise-kit .hero-art svg{width:92px;height:92px;position:relative;z-index:1;margin-right:26px}
+#expertise-kit .hero-txt{flex:1;padding:34px 28px 34px 40px;display:flex;flex-direction:column;justify-content:center;gap:12px;position:relative;z-index:2}
+#expertise-kit .hero-title{font-family:'Poppins',sans-serif;font-weight:300;font-size:clamp(22px,4.4vw,40px);letter-spacing:1px;text-transform:uppercase;color:var(--brown);line-height:1.15}
+#expertise-kit .hero-sub{font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--brown);max-width:460px;line-height:1.65}
+#expertise-kit .wrap{max-width:800px;margin:0 auto;padding:28px 16px 90px}
+#expertise-kit .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:28px;margin-bottom:20px;animation:ExpertiseKitFadeUp .35s ease}
+@keyframes ExpertiseKitFadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+#expertise-kit .eyebrow{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--brown);margin-bottom:8px;font-weight:500}
+#expertise-kit .h2{font-family:'Poppins',sans-serif;font-weight:500;font-size:clamp(20px,3.2vw,26px);color:var(--ink);line-height:1.25;margin-bottom:10px}
+#expertise-kit .h3{font-family:'Poppins',sans-serif;font-weight:500;font-size:16px;letter-spacing:.6px;text-transform:uppercase;color:var(--brown-d);margin-bottom:12px}
+#expertise-kit .lead{color:var(--muted);margin-bottom:14px}
+#expertise-kit .sub{font-size:15px;color:var(--muted)}
+#expertise-kit .divider{height:1px;background:var(--border);margin:18px 0}
+#expertise-kit .pills{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+#expertise-kit .pill{font-family:'Poppins',sans-serif;font-size:12px;padding:6px 14px;border-radius:99px;background:var(--cream);border:1px solid var(--border);color:var(--brown-d)}
+#expertise-kit .steps-howto{list-style:none;margin:6px 0 4px}
+#expertise-kit .steps-howto li{display:flex;gap:12px;align-items:flex-start;padding:7px 0}
+#expertise-kit .steps-howto .num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--brown);color:#fff;font-family:'Poppins',sans-serif;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+#expertise-kit .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+#expertise-kit .legend div{border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.35}
+#expertise-kit .legend b{display:block;font-family:'Poppins',sans-serif;font-size:13px}
+#expertise-kit .lg0{background:var(--red-l);color:var(--red)}
+#expertise-kit .lg1{background:var(--yellow-l);color:var(--yellow)}
+#expertise-kit .lg2{background:var(--green-l);color:var(--green)}
+#expertise-kit .privacy{font-size:13px;color:var(--muted);margin-top:14px}
+#expertise-kit .fld{margin-bottom:16px}
+#expertise-kit .fld label{display:block;font-weight:600;color:var(--ink);margin-bottom:6px;font-size:16px}
+#expertise-kit .fld .prefix{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:6px}
+#expertise-kit .fld input[type=text],#expertise-kit .fld textarea{width:100%;padding:13px 14px;border:1.5px solid var(--border2);border-radius:10px;font-family:'Fira Sans',sans-serif;font-size:16px;color:var(--ink);background:#fffdf9;outline:none;transition:border-color .2s,box-shadow .2s}
+#expertise-kit .fld textarea{min-height:92px;resize:vertical}
+#expertise-kit .fld input:focus,#expertise-kit .fld textarea:focus{border-color:var(--brown);box-shadow:0 0 0 3px rgba(138,116,86,.18);background:#fff}
+#expertise-kit .fld input::placeholder,#expertise-kit .fld textarea::placeholder{color:#b3a791}
+#expertise-kit .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:10px;font-family:'Poppins',sans-serif;font-weight:500;font-size:15px;cursor:pointer;border:1.5px solid transparent;transition:all .2s;min-height:48px;line-height:1.2}
+#expertise-kit .btn-primary{background:var(--brown);color:#fff}
+#expertise-kit .btn-primary:hover{background:var(--brown-d)}
+#expertise-kit .btn-ghost{background:#fff;color:var(--brown-d);border-color:var(--border2)}
+#expertise-kit .btn-ghost:hover{border-color:var(--brown);background:var(--cream)}
+#expertise-kit .btn-green{background:var(--green);color:#fff}
+#expertise-kit .btn-green:hover{background:#25663c}
+#expertise-kit .btn-sm{padding:10px 16px;min-height:42px;font-size:14px}
+#expertise-kit .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+#expertise-kit .btn-row .grow{flex:1}
+#expertise-kit .prog{position:sticky;top:0;z-index:50;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:18px;box-shadow:var(--shadow)}
+#expertise-kit .prog-top{display:flex;justify-content:space-between;gap:10px;font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+#expertise-kit .track{height:8px;background:var(--sand);border-radius:99px;overflow:hidden}
+#expertise-kit .fill{height:100%;background:linear-gradient(90deg,var(--brown),#b79d78);border-radius:99px;transition:width .4s}
+#expertise-kit .dots{display:flex;gap:5px;margin-top:10px}
+#expertise-kit .dot{flex:1;height:5px;border-radius:99px;background:var(--sand)}
+#expertise-kit .dot.done{background:var(--green)}
+#expertise-kit .dot.cur{background:var(--brown)}
+#expertise-kit .item{border:1.5px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px;background:#fffdf9;transition:border-color .2s,background .2s}
+#expertise-kit .item.missing{border-color:var(--red);background:var(--red-l)}
+#expertise-kit .q{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+#expertise-kit .q .n{flex:0 0 28px;height:28px;border-radius:8px;background:var(--sand);color:var(--brown-d);font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:1px}
+#expertise-kit .q p{color:var(--ink);font-size:17px;line-height:1.5}
+#expertise-kit .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#expertise-kit .opt{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:56px;padding:8px 6px;border-radius:10px;border:1.5px solid var(--border2);background:#fff;color:var(--text);cursor:pointer;font-family:'Fira Sans',sans-serif;font-size:15px;transition:all .15s;text-align:center;line-height:1.25}
+#expertise-kit .opt b{font-weight:600}
+#expertise-kit .opt small{font-size:12px;color:var(--muted)}
+#expertise-kit .opt:hover{border-color:var(--brown);background:var(--cream)}
+#expertise-kit .opt.on.o0{border-color:var(--red);background:var(--red-l);color:var(--red)}
+#expertise-kit .opt.on.o1{border-color:var(--yellow);background:var(--yellow-l);color:var(--yellow)}
+#expertise-kit .opt.on.o2{border-color:var(--green);background:var(--green-l);color:var(--green)}
+#expertise-kit .opt.on small{color:inherit}
+#expertise-kit .subtotal{display:flex;justify-content:space-between;align-items:center;background:var(--cream);border-radius:10px;padding:12px 16px;margin-top:6px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--brown-d)}
+#expertise-kit .subtotal b{font-size:20px}
+#expertise-kit .warn{display:none;background:var(--red-l);border:1px solid var(--red-b);color:var(--red);border-radius:10px;padding:12px 14px;margin-top:14px;font-weight:600;font-size:15px}
+#expertise-kit .warn.show{display:block}
+#expertise-kit .score{text-align:center}
+#expertise-kit .score-num{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(54px,12vw,84px);line-height:1;color:var(--c)}
+#expertise-kit .score-num small{font-size:.38em;font-weight:400;color:var(--muted)}
+#expertise-kit .scale{position:relative;height:14px;border-radius:99px;display:flex;overflow:hidden;margin:26px 0 8px}
+#expertise-kit .scale i{display:block;height:100%}
+#expertise-kit .sc-r{background:#d9847c;width:35.71%}
+#expertise-kit .sc-o{background:#e8a566;width:21.43%}
+#expertise-kit .sc-y{background:#e6cd6f;width:21.43%}
+#expertise-kit .sc-g{background:#7fbf95;width:21.43%}
+#expertise-kit .scale-wrap{position:relative}
+#expertise-kit .marker{position:absolute;top:-8px;width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-top:12px solid var(--ink);transform:translateX(-50%)}
+#expertise-kit .scale-lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:'Poppins',sans-serif}
+#expertise-kit .badge{display:inline-flex;align-items:center;gap:10px;margin-top:16px;padding:10px 18px;border-radius:99px;background:var(--cl);border:1.5px solid var(--cb);color:var(--c);font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;letter-spacing:.6px}
+#expertise-kit .resumo{font-size:19px;color:var(--ink);margin:14px auto 0;max-width:560px;line-height:1.5}
+#expertise-kit .hist{font-size:14px;color:var(--muted);margin-top:12px}
+#expertise-kit .acao{text-align:left;margin-top:20px;background:var(--cl);border:1px solid var(--cb);border-radius:12px;padding:16px 18px}
+#expertise-kit .acao b{display:block;font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--c);margin-bottom:6px}
+#expertise-kit .acao ul{list-style:none}
+#expertise-kit .acao li{padding:3px 0 3px 24px;position:relative;color:var(--ink)}
+#expertise-kit .acao li::before{content:'→';position:absolute;left:0;color:var(--c);font-weight:700}
+#expertise-kit .dim{display:grid;grid-template-columns:minmax(120px,38%) 1fr 52px;gap:12px;align-items:center;padding:8px 0}
+#expertise-kit .dim .nm{font-size:15px;color:var(--ink);line-height:1.3}
+#expertise-kit .dim .bar{height:12px;background:var(--sand);border-radius:99px;overflow:hidden}
+#expertise-kit .dim .bar i{display:block;height:100%;border-radius:99px;background:var(--c)}
+#expertise-kit .dim .val{font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;color:var(--c);text-align:right}
+#expertise-kit .adj{border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;background:#fffdf9}
+#expertise-kit .adj-h{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:'Fira Sans',sans-serif;font-size:16px;color:var(--ink);font-weight:600;min-height:52px}
+#expertise-kit .adj-h span.cnt{font-size:13px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--cl);color:var(--c);white-space:nowrap}
+#expertise-kit .adj-b{display:none;padding:2px 16px 14px}
+#expertise-kit .adj.open .adj-b{display:block}
+#expertise-kit .adj.open .adj-h .arr{transform:rotate(180deg)}
+#expertise-kit .arr{transition:transform .2s;color:var(--muted)}
+#expertise-kit .ai{display:flex;gap:10px;padding:7px 0;font-size:16px;color:var(--text);border-top:1px dashed var(--border)}
+#expertise-kit .ai:first-child{border-top:none}
+#expertise-kit .ai .ic{flex:0 0 22px;font-weight:700}
+#expertise-kit .ai.z0 .ic{color:var(--red)}
+#expertise-kit .ai.z1 .ic{color:var(--yellow)}
+#expertise-kit .allok{color:var(--green);font-weight:600;padding:10px 0}
+#expertise-kit .diag-g{margin:10px 0}
+#expertise-kit .diag-g b{display:block;color:var(--ink);margin-bottom:2px}
+#expertise-kit .diag-g ul,#expertise-kit .plain-ul{list-style:none}
+#expertise-kit .diag-g li,#expertise-kit .plain-ul li{padding:3px 0 3px 22px;position:relative}
+#expertise-kit .diag-g li::before,#expertise-kit .plain-ul li::before{content:'•';position:absolute;left:6px;color:var(--brown);font-weight:700}
+#expertise-kit .dont li::before{content:'✘';color:var(--red);left:0}
+#expertise-kit .callout{border-radius:12px;padding:14px 18px;margin:14px 0;background:var(--cream);border:1px solid var(--border);color:var(--ink)}
+#expertise-kit .callout b{color:var(--brown-d)}
+#expertise-kit .callout.cl-green{background:var(--green-l);border-color:var(--green-b)}
+#expertise-kit .callout.cl-red{background:var(--red-l);border-color:var(--red-b)}
+#expertise-kit .callout.cl-yellow{background:var(--yellow-l);border-color:var(--yellow-b)}
+#expertise-kit .plan-prog{display:flex;align-items:center;gap:14px;background:var(--cream);border-radius:12px;padding:12px 16px;margin:6px 0 18px}
+#expertise-kit .plan-prog .track{flex:1}
+#expertise-kit .plan-prog .txt{font-family:'Poppins',sans-serif;font-size:13px;color:var(--brown-d);white-space:nowrap}
+#expertise-kit .step{border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:14px;background:#fffdf9}
+#expertise-kit .step-h{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+#expertise-kit .step-h .sn{flex:0 0 32px;height:32px;border-radius:50%;background:var(--brown);color:#fff;font-family:'Poppins',sans-serif;font-weight:500;display:flex;align-items:center;justify-content:center}
+#expertise-kit .step-h .st{font-weight:600;color:var(--ink);font-size:17px;line-height:1.35}
+#expertise-kit .step-h .ss{font-size:15px;color:var(--muted)}
+#expertise-kit .chk-row{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1.5px solid var(--border2);border-radius:10px;margin:8px 0;cursor:pointer;background:#fff;transition:all .15s;color:var(--ink)}
+#expertise-kit .chk-row:hover{border-color:var(--brown)}
+#expertise-kit .chk-row input{width:22px;height:22px;margin-top:2px;flex:0 0 22px;accent-color:var(--green);cursor:pointer}
+#expertise-kit .chk-row.on{background:var(--green-l);border-color:var(--green-b)}
+#expertise-kit .chk-row.diagrow.on{background:var(--yellow-l);border-color:var(--yellow-b)}
+#expertise-kit .chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+#expertise-kit .chip{padding:11px 20px;border-radius:99px;border:1.5px solid var(--border2);background:#fff;font-family:'Fira Sans',sans-serif;font-size:16px;color:var(--text);cursor:pointer;min-height:46px;transition:all .15s}
+#expertise-kit .chip:hover{border-color:var(--brown)}
+#expertise-kit .chip.on{background:var(--brown);border-color:var(--brown);color:#fff;font-weight:600}
+#expertise-kit .list{margin:8px 0}
+#expertise-kit .list .li{display:flex;gap:10px;align-items:center;padding:9px 12px;border:1px solid var(--border);border-radius:10px;margin-bottom:6px;background:#fff}
+#expertise-kit .li-n{flex:0 0 26px;height:26px;border-radius:7px;background:var(--sand);color:var(--brown-d);font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif}
+#expertise-kit .li-t{flex:1;color:var(--ink);word-break:break-word}
+#expertise-kit .li-b{display:flex;gap:4px}
+#expertise-kit .ico{width:38px;height:38px;border-radius:8px;border:1px solid var(--border2);background:#fff;cursor:pointer;font-size:16px;color:var(--brown-d);display:flex;align-items:center;justify-content:center}
+#expertise-kit .ico:hover{background:var(--cream);border-color:var(--brown)}
+#expertise-kit .ico[disabled]{opacity:.35;cursor:default}
+#expertise-kit .list-empty{font-size:15px;color:var(--muted);padding:6px 2px}
+#expertise-kit .list-count{font-size:13px;color:var(--muted);font-family:'Poppins',sans-serif;margin:4px 2px 8px}
+#expertise-kit .list-add{display:flex;gap:8px;flex-wrap:wrap}
+#expertise-kit .list-add input{flex:1;min-width:180px;padding:12px 14px;border:1.5px solid var(--border2);border-radius:10px;font-family:'Fira Sans',sans-serif;font-size:16px;color:var(--ink);background:#fffdf9;outline:none}
+#expertise-kit .list-add input:focus{border-color:var(--brown);box-shadow:0 0 0 3px rgba(138,116,86,.18)}
+#expertise-kit .dec{display:flex;gap:12px;align-items:center;width:100%;text-align:left;padding:14px 16px;border-radius:12px;border:1.5px solid var(--border2);background:#fff;cursor:pointer;margin:8px 0;font-family:'Fira Sans',sans-serif;font-size:17px;color:var(--ink);min-height:56px;transition:all .15s}
+#expertise-kit .dec:hover{border-color:var(--brown);background:var(--cream)}
+#expertise-kit .dec .rd{flex:0 0 22px;height:22px;border-radius:50%;border:2px solid var(--border2);background:#fff}
+#expertise-kit .dec.on{border-color:var(--brown);background:var(--cream)}
+#expertise-kit .dec.on .rd{border-color:var(--brown);background:radial-gradient(circle,var(--brown) 0 45%,#fff 50%)}
+#expertise-kit .dec .sug{margin-left:auto;font-size:12px;font-family:'Poppins',sans-serif;color:var(--green);background:var(--green-l);border:1px solid var(--green-b);padding:2px 10px;border-radius:99px;white-space:nowrap}
+#expertise-kit .dec-fb{margin-top:12px}
+#expertise-kit .cta{background:linear-gradient(135deg,var(--brown-d),var(--brown));border-radius:14px;padding:26px;color:#fff;margin-bottom:20px}
+#expertise-kit .cta .h3{color:#fff}
+#expertise-kit .cta p{color:#f4ead9;margin-bottom:16px}
+#expertise-kit .cta .btn{background:#fff;color:var(--brown-d)}
+#expertise-kit .cta .btn:hover{background:var(--cream)}
+#expertise-kit .obs{text-align:center;padding:22px;border:1px dashed var(--border2);border-radius:14px;color:var(--text);background:var(--cream);margin-bottom:20px}
+#expertise-kit .obs b{color:var(--brown-d)}
+#expertise-kit .report-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+#expertise-kit .report-actions .btn{flex:1;min-width:190px}
+#expertise-kit .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 22px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:14px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:9999;max-width:90%;text-align:center}
+#expertise-kit .toast.show{opacity:1}
+#expertise-kit .print-only{display:none}
+#expertise-kit .ps{font-family:'Fira Sans',sans-serif;color:#222;font-size:13px;line-height:1.5}
+#expertise-kit .ps .ps-t{font-family:'Poppins',sans-serif;font-weight:500;font-size:20px;color:#5e4d38;margin-bottom:2px}
+#expertise-kit .ps .ps-s{font-size:12px;color:#777;margin-bottom:14px}
+#expertise-kit .ps .ps-score{font-family:'Poppins',sans-serif;font-size:26px;font-weight:600;margin:6px 0 2px}
+#expertise-kit .ps h4{font-family:'Poppins',sans-serif;font-weight:500;font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:#5e4d38;border-bottom:1px solid #d9cbb0;padding-bottom:3px;margin:14px 0 6px}
+#expertise-kit .ps ul{list-style:none}
+#expertise-kit .ps li{padding:1px 0}
+#expertise-kit .ps .txt{white-space:pre-wrap;margin:2px 0 6px 14px;padding:6px 8px;border-left:3px solid #d9cbb0;background:#faf6ec}
+@media (max-width:560px){#expertise-kit .hero{min-height:150px}
+#expertise-kit .hero-art{flex-basis:20%}
+#expertise-kit .hero-art svg{width:56px;height:56px;margin-right:18px}
+#expertise-kit .hero-txt{padding:22px 16px 22px 26px}
+#expertise-kit .card{padding:20px 16px}
+#expertise-kit .legend{grid-template-columns:1fr}
+#expertise-kit .opts{grid-template-columns:1fr}
+#expertise-kit .opt{flex-direction:row;justify-content:space-between;padding:10px 14px;min-height:50px}
+#expertise-kit .dim{grid-template-columns:1fr 46px;gap:6px 10px}
+#expertise-kit .dim .nm{grid-column:1 / -1}
+#expertise-kit .btn-row .btn{flex:1;min-width:140px}
+#expertise-kit .dec .sug{display:none}
+#expertise-kit .plan-prog{flex-direction:column;align-items:stretch;gap:6px}}
+@media print{#expertise-kit .hero,#expertise-kit .screen-only,#expertise-kit .report-actions,#expertise-kit .toast{display:none!important}
+#expertise-kit .print-only{display:block!important}
+#expertise-kit{background:#fff}
+#expertise-kit .card{box-shadow:none}}
+#expertise-kit .ticks{position:relative;height:20px;font-size:12px;color:var(--muted);font-family:'Poppins',sans-serif}
+#expertise-kit .ticks span{position:absolute;top:0;white-space:nowrap}
+#expertise-kit .thermo-bar{position:relative;height:16px;border-radius:99px;background:linear-gradient(90deg,#e3c79c,#ecd68e 50%,#8fc7a3);margin:26px 0 8px}
+#expertise-kit .thermo-lbl{display:flex;justify-content:space-between;gap:14px;font-size:13px;color:var(--muted);line-height:1.35}
+#expertise-kit .thermo-lbl span:last-child{text-align:right}
+#expertise-kit .thermo-pct{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(34px,8vw,48px);color:var(--c);line-height:1}
+#expertise-kit .thermo-lvl{display:inline-block;margin-top:6px;font-family:'Poppins',sans-serif;font-weight:600;font-size:15px;padding:4px 14px;border-radius:99px;background:var(--cl);border:1.5px solid var(--cb);color:var(--c)}
+#expertise-kit .defs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
+#expertise-kit .defs div{border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.45}
+#expertise-kit .defs b{display:block;font-family:'Poppins',sans-serif;font-size:13px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:2px}
+#expertise-kit .def-t{background:var(--sand);color:var(--brown-d)}
+#expertise-kit .def-e{background:var(--green-l);color:var(--green)}
+#expertise-kit .blk-label{font-weight:600;color:var(--ink);margin:12px 0 4px;font-size:16px}
+#expertise-kit .why{font-size:15px;color:var(--muted);margin:0 0 8px}
+#expertise-kit .tip{background:var(--cream);border-left:4px solid var(--brown);border-radius:8px;padding:10px 14px;font-size:15px;color:var(--brown-d);margin:8px 0 12px}
+#expertise-kit .mrow{display:grid;grid-template-columns:1fr auto;gap:10px 14px;align-items:center;padding:14px 16px;border:1px solid var(--border);border-radius:12px;margin-bottom:10px;background:#fffdf9}
+#expertise-kit .mrow .mn{font-weight:600;color:var(--ink);font-size:17px;line-height:1.3}
+#expertise-kit .mrow .ms{font-size:14px;color:var(--muted)}
+#expertise-kit .mrow .mbar{grid-column:1 / -1;height:10px;background:var(--sand);border-radius:99px;overflow:hidden}
+#expertise-kit .mrow .mbar i{display:block;height:100%;background:var(--c);border-radius:99px}
+#expertise-kit .mrow .mb{display:flex;gap:8px;flex-wrap:wrap}
+#expertise-kit .best{display:inline-block;font-size:12px;font-family:'Poppins',sans-serif;color:var(--green);background:var(--green-l);border:1px solid var(--green-b);padding:2px 10px;border-radius:99px;margin-left:8px;vertical-align:middle}
+#expertise-kit .dim .sub2{display:block;font-size:13px;color:var(--muted)}
+@media (max-width:560px){#expertise-kit .defs{grid-template-columns:1fr}
+#expertise-kit .mrow{grid-template-columns:1fr}}
+
+</style>
+<div id="expertise-kit">
+<div id="app">
+  <header class="hero">
+    <div class="hero-art">
+      <svg viewBox="0 0 96 96" fill="none" stroke="#faf2e1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="42" cy="42" r="26"/>
+        <path d="M62 62l22 22"/>
+        <path d="M32 42h20"/><path d="M42 32v20"/>
+      </svg>
+    </div>
+    <div class="hero-txt">
+      <div class="hero-title" id="heroTitle">Diagnóstico Rápido de Expertise</div>
+      <div class="hero-sub" id="heroSub">Descubra o quanto o seu conhecimento já está pronto para virar um minicurso e o que fazer para organizá-lo.</div>
+    </div>
+  </header>
+  <div class="wrap">
+    <div id="view"></div>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+</div>
+<script>
+(function(){
+var ROOT=document.getElementById('expertise-kit');
+if(!ROOT)return;
+function byId(id){return ROOT.querySelector('[id="'+id+'"]');}
+
+// ===== CONFIGURAÇÃO (edite se quiser) =====
+var CTA_URL='';                                   // cole aqui o link do próximo passo (página do kit, WhatsApp, agenda...)
+var CTA_BTN='Quero dar o próximo passo';          // texto do botão (aparece só se CTA_URL estiver preenchido)
+var CTA_TITULO='👉 Próximo passo natural';
+var CTA_MSG='Com a sua expertise mais clara, o passo seguinte é transformá-la em um minicurso. O Kit de Transformação conduz você, etapa por etapa, do inventário da sua trajetória até o roteiro da primeira aula.';
+// ==========================================
+
+var KEY='diagnostico_expertise_v1';
+
+var DIMS=[
+ {id:'d1',nome:'Profundidade da experiência',pq:'Quanto do seu saber vem de prática real e profunda.',itens:[
+  'Tenho vários anos de prática real neste assunto',
+  'Já resolvi problemas difíceis ou fora do comum nesta área',
+  'As pessoas me procuram para pedir ajuda ou opinião sobre isso',
+  'Sei lidar com situações novas e imprevistas neste tema']},
+ {id:'d2',nome:'Clareza para explicar',pq:'Quanto você já consegue colocar em palavras o que faz “de cabeça” e “de mão”.',itens:[
+  'Consigo explicar, passo a passo, como faço para um iniciante',
+  'Sei dizer por que faço de um jeito e não de outro',
+  'Consigo contar casos reais que mostram o que eu ensinaria',
+  'Sei apontar os erros mais comuns de quem está começando']},
+ {id:'d3',nome:'Organização do conhecimento',pq:'Quanto desse saber já está organizado em temas, etapas e partes pequenas.',itens:[
+  'Consigo listar os principais temas ou etapas do que sei',
+  'Sei qual é o ponto de partida e o ponto de chegada de quem aprende',
+  'Consigo dividir o assunto em partes pequenas, com uma ideia em cada',
+  'Tenho (ou consigo montar) modelos, roteiros ou checklists que eu mesmo uso']},
+ {id:'d4',nome:'Público e necessidade',pq:'Para quem, e para resolver qual problema, o seu saber serve.',itens:[
+  'Sei exatamente quem precisa aprender isso',
+  'Sei qual problema real essa pessoa quer resolver',
+  'Esse problema é reconhecido pelas pessoas: elas o sentem no dia a dia',
+  'Conheço as palavras que esse público usa para falar do assunto']},
+ {id:'d5',nome:'Registro e provas',pq:'O que você já tem registrado e comprovado: textos, casos, resultados.',itens:[
+  'Já tenho materiais escritos sobre isso (textos, apresentações, anotações, e-mails)',
+  'Tenho exemplos ou resultados reais que posso mostrar',
+  'Já ensinei isso a alguém (conversas, treinamentos, mentoria)',
+  'Já registrei algo do que sei em texto, áudio ou vídeo']},
+ {id:'d6',nome:'Disposição e viabilidade',pq:'Se você quer e consegue levar isso adiante, no seu ritmo.',itens:[
+  'Quero ensinar este assunto: ele me dá energia',
+  'Tenho algumas horas por semana para me dedicar a isso',
+  'Sinto-me à vontade para ensinar por texto, áudio ou vídeo',
+  'Tenho computador ou celular e disposição para aprender o básico']}
+];
+var EXPL=['d2','d3','d5'];                    // dimensões que medem o quanto o saber já é "explícito"
+var PRI=['d2','d3','d5','d4','d1','d6'];      // desempate na escolha dos exercícios
+var OPTS=[{v:0,t:'Ainda não',s:'0 ponto'},{v:1,t:'Em parte',s:'1 ponto'},{v:2,t:'Sim, plenamente',s:'2 pontos'}];
+
+var EXS={
+ d1:{titulo:'Liste 3 situações difíceis que você já resolveu',tempo:'10 min',
+  porque:'Mostra a profundidade da sua experiência e já reúne casos reais para usar nas aulas.',dica:'',
+  blocos:[
+   {k:'list',id:'x1_sit',label:'Situações difíceis que resolvi',ph:'Ex.: Recuperei um projeto atrasado renegociando os prazos',add:'Adicionar situação'},
+   {k:'check',id:'x1_ok',txt:'Escolhi a situação da qual mais me orgulho para contar primeiro'}]},
+ d2:{titulo:'Explique como se fosse para um iniciante',tempo:'15 min',
+  porque:'É o exercício central para transformar o que você sabe “de cabeça” em conhecimento escrito.',
+  dica:'Dica: se escrever travar, grave um áudio falando sozinho por 2 minutos e depois anote o que disse.',
+  blocos:[
+   {k:'list',id:'x2_passos',label:'Os passos do que você faz, na ordem',ph:'Ex.: Primeiro, levanto o que o cliente realmente precisa',add:'Adicionar passo'},
+   {k:'field',id:'x2_erro',label:'Qual é o erro mais comum de quem está começando, e como evitá-lo?',ph:'Escreva em poucas linhas…',multi:true},
+   {k:'field',id:'x2_caso',label:'Conte um caso real em 3 frases (a situação, o que você fez, o resultado)',ph:'Escreva o caso…',multi:true}]},
+ d3:{titulo:'Monte o mapa do seu conhecimento',tempo:'15 min',
+  porque:'Organiza o que você sabe em partes pequenas, que depois viram microaulas.',dica:'',
+  blocos:[
+   {k:'list',id:'x3_temas',label:'Os grandes temas ou etapas, do mais simples ao mais complexo',ph:'Ex.: Como preparar uma negociação',add:'Adicionar tema'},
+   {k:'field',id:'x3_ini',label:'Onde a pessoa está quando começa a aprender?',ph:'Ex.: Já trabalha na área, mas decide por intuição',multi:true},
+   {k:'field',id:'x3_fim',label:'Aonde ela chega no final?',ph:'Ex.: Conduz uma negociação com método e segurança',multi:true}]},
+ d4:{titulo:'Defina para quem e para quê',tempo:'10 min',
+  porque:'Um conhecimento só vira curso quando tem uma pessoa e um problema bem definidos.',dica:'',
+  blocos:[
+   {k:'field',id:'x4_quem',label:'Quem precisa aprender isso? (uma pessoa específica, não “todo mundo”)',ph:'Ex.: Gestores de primeira viagem',multi:false},
+   {k:'field',id:'x4_prob',label:'Que problema real essa pessoa quer resolver?',ph:'Escreva o problema…',multi:true},
+   {k:'field',id:'x4_pal',label:'Como ela falaria sobre esse problema? Use as palavras dela.',ph:'Ex.: “Não sei por onde começar”, “perco tempo demais com isso”…',multi:true}]},
+ d5:{titulo:'Reúna o que você já tem',tempo:'10 min',
+  porque:'Você provavelmente já tem muito material espalhado. Reunir é o primeiro passo para organizar.',dica:'',
+  blocos:[
+   {k:'list',id:'x5_mat',label:'Materiais que já existem (arquivos, textos, anotações, apresentações…)',ph:'Ex.: Apresentação do treinamento de 2019',add:'Adicionar material'},
+   {k:'field',id:'x5_caso',label:'Um resultado ou caso real que você pode mostrar',ph:'Descreva em poucas linhas…',multi:true},
+   {k:'check',id:'x5_pasta',txt:'Juntei esses materiais em uma única pasta'}]},
+ d6:{titulo:'Defina o seu ritmo e o seu formato',tempo:'5 min',
+  porque:'Um plano realista, no seu ritmo, tem muito mais chance de sair do papel.',dica:'',
+  blocos:[
+   {k:'choice',id:'x6_fmt',label:'Formato com o qual me sinto mais à vontade',opts:['Texto','Áudio','Vídeo','Misto']},
+   {k:'choice',id:'x6_h',label:'Tempo que posso dedicar',opts:['1 a 2 h por semana','3 a 5 h por semana','6 h ou mais por semana']},
+   {k:'field',id:'x6_rec',label:'Qual é o meu maior receio nesse caminho?',ph:'Escreva com sinceridade…',multi:true}]}
+};
+
+var BANDS=[
+ {id:1,cor:'green',emoji:'🟢',nome:'EXPERTISE PRONTA PARA VIRAR MINICURSO',faixa:'38 a 48 pontos',min:38,
+  resumo:'O seu conhecimento já está claro, organizado e tem público. Falta modelar em microaulas.',
+  acao:['Defina o tema e a promessa do minicurso','Divida o conteúdo em microaulas de 5 a 10 minutos','Escolha o formato: texto, áudio ou vídeo','Escreva ou grave a primeira aula']},
+ {id:2,cor:'yellow',emoji:'🟡',nome:'QUASE PRONTA: FALTA ORGANIZAR',faixa:'28 a 37 pontos',min:28,
+  resumo:'Você domina o assunto, mas ainda precisa organizar e registrar parte do que sabe.',
+  acao:['Faça os primeiros passos abaixo: são exatamente as suas lacunas','Reúna e organize o que você já tem registrado','Escolha um recorte: um só público e um só problema','Refaça este diagnóstico em algumas semanas']},
+ {id:3,cor:'orange',emoji:'🟠',nome:'EM FORMAÇÃO: HORA DE EXPLICITAR',faixa:'16 a 27 pontos',min:16,
+  resumo:'Há muito conhecimento aí dentro, mas boa parte ainda está “na cabeça” e nas mãos. É hora de colocar em palavras.',
+  acao:['Comece pelos exercícios abaixo: eles transformam o que você sabe em palavras','Explique o seu método em passos simples, como para um iniciante','Conte casos reais: são o seu melhor material','Só depois pense em formato e gravação']},
+ {id:4,cor:'red',emoji:'🔴',nome:'AINDA MUITO TÁCITA: COMECE PELO REGISTRO',faixa:'0 a 15 pontos',min:0,
+  resumo:'Isso não significa pouco conhecimento: significa que ele ainda não foi colocado em palavras. O melhor começo é registrar.',
+  acao:['Fale ou escreva sobre o que você faz, sem se preocupar com a forma','Converse com alguém que já pediu a sua ajuda e anote as perguntas dela','Faça os exercícios abaixo, um por vez, sem pressa','Refaça este diagnóstico depois de registrar os primeiros materiais']}
+];
+var LEVELS=[
+ {max:33,cor:'red',nome:'Predominantemente tácita',txt:'O que você sabe está, em grande parte, na prática e na intuição. Ainda é difícil de explicar a outras pessoas, e é justamente aí que está o maior valor a ser organizado.'},
+ {max:66,cor:'yellow',nome:'Em transição',txt:'Parte do seu conhecimento já foi colocada em palavras; parte ainda vive só na prática. Continue explicitando: passos, casos reais e erros comuns.'},
+ {max:100,cor:'green',nome:'Já bastante explícita',txt:'Você já consegue explicar, organizar e registrar o que sabe. Isso é a base de qualquer minicurso.'}
+];
+
+var S=loadState();
+var armed={};
+
+function blankPlan(){ return {tasks:{},fields:{},lists:{},choices:{}}; }
+function newExp(nome){ return {id:'e'+Date.now().toString(36)+Math.floor(Math.random()*1296).toString(36),nome:nome,ans:{},done:false,plan:blankPlan(),openAdj:{},hist:[],histKey:''}; }
+function loadState(){
+  var base={exps:[],cur:-1,step:0,view:'welcome',tmp:''}, saved=null, i;
+  try{saved=JSON.parse(window.localStorage.getItem(KEY)||'null');}catch(e){saved=null;}
+  if(saved&&typeof saved==='object'&&saved.exps&&typeof saved.exps.length==='number'){
+    base.exps=saved.exps; base.cur=(typeof saved.cur==='number')?saved.cur:-1; base.step=saved.step||0; base.tmp=saved.tmp||'';
+    for(i=0;i<base.exps.length;i++){
+      var e=base.exps[i]; e.ans=e.ans||{}; e.plan=e.plan||blankPlan(); e.plan.tasks=e.plan.tasks||{}; e.plan.fields=e.plan.fields||{}; e.plan.lists=e.plan.lists||{}; e.plan.choices=e.plan.choices||{}; e.openAdj=e.openAdj||{}; e.hist=e.hist||[];
+    }
+    if(base.cur>=base.exps.length) base.cur=base.exps.length-1;
+  }
+  return base;
+}
+function save(){ try{window.localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} }
+function storageOk(){ try{var t='__t';window.localStorage.setItem(t,'1');window.localStorage.removeItem(t);return true;}catch(e){return false;} }
+
+function $(id){ return byId(id); }
+var APP=$('app'), VIEW=$('view');
+
+function E(){ return S.exps[S.cur]; }
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function ansKey(d,i){ return d+'_'+i; }
+function dimScore(e,d){ var t=0; for(var i=0;i<d.itens.length;i++){ var v=e.ans[ansKey(d.id,i)]; if(typeof v==='number') t+=v; } return t; }
+function dimById(id){ for(var i=0;i<DIMS.length;i++){ if(DIMS[i].id===id) return DIMS[i]; } return null; }
+function total(e){ var t=0; for(var i=0;i<DIMS.length;i++) t+=dimScore(e,DIMS[i]); return t; }
+function answered(e){ var n=0; for(var k in e.ans){ if(typeof e.ans[k]==='number') n++; } return n; }
+function totalItems(){ var n=0; for(var i=0;i<DIMS.length;i++) n+=DIMS[i].itens.length; return n; }
+function maxScore(){ return totalItems()*2; }
+function dimAnswered(e,d){ var n=0; for(var i=0;i<d.itens.length;i++){ if(typeof e.ans[ansKey(d.id,i)]==='number') n++; } return n; }
+function bandOf(sc){ for(var i=0;i<BANDS.length;i++){ if(sc>=BANDS[i].min) return BANDS[i]; } return BANDS[BANDS.length-1]; }
+function firstIncomplete(e){ for(var i=0;i<DIMS.length;i++){ if(dimAnswered(e,DIMS[i])<DIMS[i].itens.length) return i; } return -1; }
+function explicitPct(e){ var t=0,m=0; for(var i=0;i<EXPL.length;i++){ var d=dimById(EXPL[i]); t+=dimScore(e,d); m+=d.itens.length*2; } return Math.round(t/m*100); }
+function levelOf(p){ for(var i=0;i<LEVELS.length;i++){ if(p<=LEVELS[i].max) return LEVELS[i]; } return LEVELS[LEVELS.length-1]; }
+function tone(score,max){ var r=score/max; return r>=0.75?'green':(r>=0.5?'yellow':'red'); }
+function weakDims(e){
+  var arr=DIMS.slice(), out=[], i;
+  arr.sort(function(a,b){ var sa=dimScore(e,a), sb=dimScore(e,b); if(sa!==sb) return sa-sb; return PRI.indexOf(a.id)-PRI.indexOf(b.id); });
+  for(i=0;i<arr.length&&out.length<3;i++){ if(dimScore(e,arr[i])<arr[i].itens.length*2) out.push(arr[i]); }
+  return out;
+}
+function today(){ try{return new Date().toLocaleDateString('pt-BR');}catch(e){return '';} }
+function toTop(){ try{VIEW.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){} }
+function toast(msg){ var t=$('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(function(){t.classList.remove('show');},3200); }
+function pctPos(v,max){ return (v/max*100); }
+
+/* ---------- HERO ---------- */
+function setHero(){
+  var t=$('heroTitle'), s=$('heroSub');
+  t.textContent='Diagnóstico Rápido de Expertise';
+  s.textContent=(S.view==='result')?'Do conhecimento tácito ao conhecimento explícito: o seu ponto de partida.':'Descubra o quanto o seu conhecimento já está pronto para virar um minicurso e o que fazer para organizá-lo.';
+}
+
+/* ---------- WELCOME ---------- */
+function mapRow(e,i,actions){
+  var done=e.done, sc=total(e), b=bandOf(sc), h='';
+  h+='<div class="mrow band-'+(done?b.cor:'yellow')+'"><div><div class="mn">'+esc(e.nome)+'</div><div class="ms">'
+   +(done?(b.emoji+' '+sc+' / '+maxScore()+' pontos · tácito → explícito: '+explicitPct(e)+'%'):('Em andamento · '+answered(e)+' de '+totalItems()+' afirmações respondidas'))+'</div></div>';
+  if(actions) h+='<div class="mb"><button type="button" class="btn btn-primary btn-sm" data-act="open" data-i="'+i+'">'+(done?'Ver resultado':'Continuar')+'</button><button type="button" class="btn btn-ghost btn-sm" data-act="del" data-i="'+i+'">Remover</button></div>';
+  if(done) h+='<div class="mbar"><i style="width:'+Math.round(sc/maxScore()*100)+'%"></i></div>';
+  return h+'</div>';
+}
+function viewWelcome(){
+  var h='', i;
+  if(S.exps.length){
+    h+='<div class="card screen-only"><div class="eyebrow">Seus diagnósticos salvos</div><div class="h2">Continue de onde parou</div>';
+    for(i=0;i<S.exps.length;i++) h+=mapRow(S.exps[i],i,true);
+    h+='</div>';
+  }
+  h+='<div class="card"><div class="eyebrow">Diagnóstico rápido · cerca de 10 minutos</div>'
+   +'<div class="h2">Quanto da sua expertise já está pronto para ser ensinado?</div>'
+   +'<p class="lead">Quem tem muitos anos de estrada sabe muito, mas boa parte desse saber está “na cabeça” e nas mãos. Para virar minicurso, ele precisa ser colocado em palavras, passos, exemplos e materiais.</p>'
+   +'<div class="defs"><div class="def-t"><b>Conhecimento tácito</b>O que você sabe fazer, mas raramente consegue explicar.</div><div class="def-e"><b>Conhecimento explícito</b>O que já foi colocado em palavras, passos e materiais.</div></div>'
+   +'<p class="lead" style="margin-top:12px">Este diagnóstico mostra onde você está nesse caminho e o que fazer primeiro, de forma simples e prática.</p>'
+   +'<div class="pills"><span class="pill">6 dimensões</span><span class="pill">24 afirmações</span><span class="pill">cerca de 10 minutos</span><span class="pill">resultado para levar</span></div></div>';
+  h+='<div class="card"><div class="h3">Como funciona</div><ul class="steps-howto">'
+   +'<li><span class="num">1</span><span>Escolha <b>uma expertise</b>: o assunto em que as pessoas mais pedem a sua ajuda.</span></li>'
+   +'<li><span class="num">2</span><span>Responda 24 afirmações sobre ela, escolhendo 0, 1 ou 2 pontos.</span></li>'
+   +'<li><span class="num">3</span><span>Veja o seu resultado: escore, termômetro do tácito ao explícito e o que ajustar.</span></li>'
+   +'<li><span class="num">4</span><span>Faça até 3 exercícios curtos. Eles já começam a colocar o seu saber em palavras.</span></li>'
+   +'<li><span class="num">5</span><span>Leve o resumo com você (copiar ou salvar em PDF).</span></li></ul>'
+   +'<div class="h3" style="margin-top:14px">Pontuação por afirmação</div><div class="legend">'
+   +'<div class="lg0"><b>0 ponto</b>Ainda não</div><div class="lg1"><b>1 ponto</b>Em parte</div><div class="lg2"><b>2 pontos</b>Sim, plenamente</div></div>'
+   +'<p class="sub" style="margin-top:12px">Quer avaliar mais de uma expertise? Faça uma de cada vez. No final você compara.</p></div>';
+  h+='<div class="card"><div class="fld"><label for="nomeExp">Qual expertise você vai diagnosticar agora?</label>'
+   +'<div class="prefix">Pense em um assunto específico, não em toda a sua carreira.</div>'
+   +'<input type="text" id="nomeExp" data-act="nome" value="'+esc(S.tmp)+'" placeholder="Ex.: Negociação com fornecedores" maxlength="120"></div>'
+   +'<div class="warn" id="warnName" role="alert">Escreva o nome da expertise para continuar.</div>'
+   +'<div class="btn-row" style="margin-top:10px"><button type="button" class="btn btn-primary grow" data-act="start">'+(S.exps.length?'Diagnosticar uma nova expertise':'Começar o diagnóstico')+'</button></div>'
+   +'<p class="privacy">🔒 Nada é enviado para nenhum servidor. '+(storageOk()?'O seu progresso fica salvo apenas neste navegador, para você continuar depois.':'O seu progresso fica apenas nesta página aberta.')+'</p>'
+   +(S.exps.length?'<div class="btn-row" style="margin-top:6px"><button type="button" class="btn btn-ghost btn-sm" data-act="reset">Apagar todos os diagnósticos</button></div>':'')+'</div>';
+  return h;
+}
+
+/* ---------- CHECK ---------- */
+function viewCheck(){
+  var e=E(), d=DIMS[S.step], a=answered(e), T=totalItems(), last=(S.step===DIMS.length-1), h='', i, j;
+  var dots=''; for(i=0;i<DIMS.length;i++){ dots+='<span class="dot'+(dimAnswered(e,DIMS[i])===DIMS[i].itens.length&&i!==S.step?' done':'')+(i===S.step?' cur':'')+'"></span>'; }
+  h+='<div class="prog screen-only"><div class="prog-top"><span>Dimensão '+(S.step+1)+' de '+DIMS.length+' · '+esc(e.nome)+'</span><span id="progTxt">'+a+' de '+T+'</span></div>'
+   +'<div class="track"><div class="fill" id="progFill" style="width:'+Math.round(a/T*100)+'%"></div></div><div class="dots">'+dots+'</div></div>';
+  h+='<div class="card"><div class="eyebrow">Dimensão '+(S.step+1)+' · máx. '+(d.itens.length*2)+' pontos</div><div class="h2">'+esc(d.nome)+'</div>'
+   +'<p class="sub" style="margin-bottom:6px">'+esc(d.pq)+'</p>'
+   +'<p class="sub" style="margin-bottom:16px">Pensando em <b>'+esc(e.nome)+'</b>, escolha a pontuação que melhor descreve a sua situação.</p>';
+  for(i=0;i<d.itens.length;i++){
+    var cur=e.ans[ansKey(d.id,i)], btns='';
+    for(j=0;j<OPTS.length;j++){
+      var o=OPTS[j];
+      btns+='<button type="button" class="opt o'+o.v+(cur===o.v?' on':'')+'" data-act="ans" data-d="'+d.id+'" data-i="'+i+'" data-v="'+o.v+'" aria-pressed="'+(cur===o.v?'true':'false')+'"><b>'+o.t+'</b><small>'+o.s+'</small></button>';
+    }
+    h+='<div class="item" id="it_'+d.id+'_'+i+'"><div class="q"><span class="n">'+(i+1)+'</span><p>'+esc(d.itens[i])+'</p></div><div class="opts" role="group" aria-label="'+esc(d.itens[i])+'">'+btns+'</div></div>';
+  }
+  h+='<div class="subtotal"><span>Subtotal desta dimensão</span><span><b id="subVal">'+dimScore(e,d)+'</b> / '+(d.itens.length*2)+'</span></div>'
+   +'<div class="warn" id="warn" role="alert"></div>'
+   +'<div class="btn-row"><button type="button" class="btn btn-ghost" data-act="back">← Voltar</button>'
+   +'<button type="button" class="btn btn-primary grow" data-act="next">'+(last?'Ver o meu diagnóstico ✓':'Próxima dimensão →')+'</button></div></div>';
+  return h;
+}
+function updateCheckMeta(){
+  var e=E(), a=answered(e), T=totalItems(), d=DIMS[S.step];
+  var pf=$('progFill'), pt=$('progTxt'), sv=$('subVal');
+  if(pf) pf.style.width=Math.round(a/T*100)+'%';
+  if(pt) pt.textContent=a+' de '+T;
+  if(sv) sv.textContent=dimScore(e,d);
+}
+
+/* ---------- PLANO (exercícios) ---------- */
+function planStats(e){
+  var wd=weakDims(e), done=0, tot=0, P=e.plan, i, j;
+  for(i=0;i<wd.length;i++){
+    var bl=EXS[wd[i].id].blocos;
+    for(j=0;j<bl.length;j++){
+      var x=bl[j]; tot++;
+      if(x.k==='check'){ if(P.tasks[x.id]) done++; }
+      else if(x.k==='field'){ if((P.fields[x.id]||'').replace(/\s/g,'')) done++; }
+      else if(x.k==='list'){ if((P.lists[x.id]||[]).length>0) done++; }
+      else if(x.k==='choice'){ if(P.choices[x.id]) done++; }
+    }
+  }
+  return {done:done,total:tot};
+}
+function listInner(id){
+  var arr=E().plan.lists[id]||[], h='';
+  if(!arr.length) return '<div class="list-empty">Nenhum item ainda. Escreva abaixo e clique em adicionar (ou tecle Enter).</div>';
+  for(var i=0;i<arr.length;i++){
+    h+='<div class="li"><span class="li-n">'+(i+1)+'</span><span class="li-t">'+esc(arr[i])+'</span><span class="li-b">'
+      +'<button type="button" class="ico" title="Subir" aria-label="Subir" data-act="lup" data-id="'+id+'" data-i="'+i+'"'+(i===0?' disabled':'')+'>↑</button>'
+      +'<button type="button" class="ico" title="Descer" aria-label="Descer" data-act="ldown" data-id="'+id+'" data-i="'+i+'"'+(i===arr.length-1?' disabled':'')+'>↓</button>'
+      +'<button type="button" class="ico" title="Remover" aria-label="Remover" data-act="ldel" data-id="'+id+'" data-i="'+i+'">×</button></span></div>';
+  }
+  return h+'<div class="list-count">'+arr.length+(arr.length===1?' item':' itens')+'</div>';
+}
+function blockHTML(x){
+  var P=E().plan, h='', i;
+  if(x.k==='check'){
+    var on=!!P.tasks[x.id];
+    return '<label class="chk-row'+(on?' on':'')+'"><input type="checkbox" data-act="chk" data-id="'+x.id+'"'+(on?' checked':'')+'><span>'+esc(x.txt)+'</span></label>';
+  }
+  if(x.k==='field'){
+    var val=P.fields[x.id]||'';
+    h+='<div class="fld">'+(x.label?'<label for="f_'+x.id+'">'+esc(x.label)+'</label>':'');
+    h+=x.multi?'<textarea id="f_'+x.id+'" data-act="fld" data-id="'+x.id+'" placeholder="'+esc(x.ph||'')+'">'+esc(val)+'</textarea>'
+              :'<input type="text" id="f_'+x.id+'" data-act="fld" data-id="'+x.id+'" value="'+esc(val)+'" placeholder="'+esc(x.ph||'')+'">';
+    return h+'</div>';
+  }
+  if(x.k==='choice'){
+    h+=(x.label?'<div class="blk-label">'+esc(x.label)+'</div>':'')+'<div class="chips" role="group">';
+    for(i=0;i<x.opts.length;i++){ h+='<button type="button" class="chip'+(P.choices[x.id]===x.opts[i]?' on':'')+'" data-act="choice" data-id="'+x.id+'" data-v="'+esc(x.opts[i])+'" aria-pressed="'+(P.choices[x.id]===x.opts[i]?'true':'false')+'">'+esc(x.opts[i])+'</button>'; }
+    return h+'</div>';
+  }
+  if(x.k==='list'){
+    return (x.label?'<div class="blk-label">'+esc(x.label)+'</div>':'')+'<div class="list" id="list_'+x.id+'">'+listInner(x.id)+'</div>'
+      +'<div class="list-add"><input type="text" id="li_'+x.id+'" data-lin="'+x.id+'" placeholder="'+esc(x.ph||'')+'" maxlength="160"><button type="button" class="btn btn-ghost btn-sm" data-act="ladd" data-id="'+x.id+'">+ '+esc(x.add||'Adicionar')+'</button></div>';
+  }
+  return '';
+}
+function refreshPlanProgress(){
+  var st=planStats(E()), f=$('planFill'), t=$('planTxt');
+  var pct=st.total?Math.round(st.done/st.total*100):0;
+  if(f) f.style.width=pct+'%';
+  if(t) t.textContent=st.done+' de '+st.total+' tarefas concluídas';
+  fillPrint();
+}
+
+/* ---------- RESULT ---------- */
+function adjustGroups(e){
+  var out=[];
+  for(var i=0;i<DIMS.length;i++){
+    var d=DIMS[i], zs=[], ps=[];
+    for(var j=0;j<d.itens.length;j++){ var v=e.ans[ansKey(d.id,j)]; if(v===0) zs.push(d.itens[j]); else if(v===1) ps.push(d.itens[j]); }
+    out.push({d:d,score:dimScore(e,d),zeros:zs,partials:ps});
+  }
+  return out;
+}
+function doneList(){ var out=[]; for(var i=0;i<S.exps.length;i++){ if(S.exps[i].done) out.push(i); } return out; }
+function bestIndex(){
+  var dl=doneList(), best=-1, bs=-1;
+  for(var i=0;i<dl.length;i++){ var sc=total(S.exps[dl[i]]); if(sc>bs){ bs=sc; best=dl[i]; } }
+  return best;
+}
+function viewResult(){
+  var e=E(), sc=total(e), max=maxScore(), b=bandOf(sc), st=planStats(e), h='', i, j, pct;
+  var groups=adjustGroups(e), p=explicitPct(e), lv=levelOf(p), wd=weakDims(e);
+  var order=groups.slice().sort(function(x,y){return (x.score/(x.d.itens.length*2))-(y.score/(y.d.itens.length*2));});
+  var lowIds={}; for(i=0;i<2;i++){ if(order[i].score<order[i].d.itens.length*2) lowIds[order[i].d.id]=true; }
+  var ticks=[0,16,28,38,max];
+  h+='<div class="report-panel">';
+  /* 1) escore */
+  h+='<div class="card score screen-only band-'+b.cor+'"><div class="eyebrow">Diagnóstico da expertise</div>'
+   +'<div class="sub" style="margin-bottom:6px"><b>'+esc(e.nome)+'</b></div>'
+   +'<div class="score-num">'+sc+'<small> / '+max+'</small></div>'
+   +'<div class="scale-wrap"><div class="scale"><i style="width:'+(16/max*100)+'%;background:#d9847c"></i><i style="width:'+(12/max*100)+'%;background:#e8a566"></i><i style="width:'+(10/max*100)+'%;background:#e6cd6f"></i><i style="width:'+(10/max*100)+'%;background:#7fbf95"></i></div><span class="marker" style="left:'+(sc/max*100)+'%"></span></div>'
+   +'<div class="ticks">';
+  for(i=0;i<ticks.length;i++){ h+='<span style="left:'+(ticks[i]/max*100)+'%;transform:translateX('+(i===0?'0':(i===ticks.length-1?'-100%':'-50%'))+')">'+ticks[i]+'</span>'; }
+  h+='</div><div class="badge">'+b.emoji+' '+esc(b.nome)+'</div><div class="resumo">'+esc(b.resumo)+'</div>';
+  if(e.hist.length>1){ var hs=[]; for(i=0;i<e.hist.length;i++) hs.push(e.hist[i].s); h+='<div class="hist">Seus diagnósticos desta expertise: '+hs.join(' → ')+' pontos</div>'; }
+  h+='<div class="acao"><b>Ação recomendada</b><ul>'; for(i=0;i<b.acao.length;i++) h+='<li>'+esc(b.acao[i])+'</li>'; h+='</ul></div></div>';
+  /* 2) termômetro */
+  h+='<div class="card screen-only band-'+lv.cor+'"><div class="h3">🌡️ Termômetro: do saber tácito ao explícito</div>'
+   +'<div style="text-align:center"><div class="thermo-pct">'+p+'%</div><span class="thermo-lvl">'+esc(lv.nome)+'</span></div>'
+   +'<div class="scale-wrap"><div class="thermo-bar"></div><span class="marker" style="left:'+p+'%"></span></div>'
+   +'<div class="thermo-lbl"><span>Tácito<br>na prática e na intuição</span><span>Explícito<br>em palavras e materiais</span></div>'
+   +'<p style="margin-top:14px">'+esc(lv.txt)+'</p>'
+   +'<p class="sub" style="margin-top:8px">Calculado a partir de três dimensões: clareza para explicar, organização do conhecimento e registro e provas.</p></div>';
+  /* 3) perfil */
+  h+='<div class="card screen-only"><div class="h3">📊 Perfil da expertise por dimensão</div>';
+  for(i=0;i<groups.length;i++){ var g=groups[i], mx=g.d.itens.length*2, tn=tone(g.score,mx); h+='<div class="dim band-'+tn+'"><span class="nm">'+esc(g.d.nome)+'</span><span class="bar"><i style="width:'+Math.round(g.score/mx*100)+'%"></i></span><span class="val">'+g.score+'/'+mx+'</span></div>'; }
+  h+='</div>';
+  /* 4) o que ajustar */
+  h+='<div class="card screen-only"><div class="h3">🔧 O que ajustar</div><p class="sub" style="margin-bottom:12px">Afirmações marcadas como “Ainda não” ou “Em parte”, por dimensão. As duas dimensões mais fracas já estão abertas.</p>';
+  for(i=0;i<groups.length;i++){
+    var gg=groups[i], n=gg.zeros.length+gg.partials.length, open=(e.openAdj[gg.d.id]!==undefined)?e.openAdj[gg.d.id]:!!lowIds[gg.d.id], tn2=tone(gg.score,gg.d.itens.length*2);
+    h+='<div class="adj band-'+tn2+(open?' open':'')+'" id="adj_'+gg.d.id+'"><button type="button" class="adj-h" data-act="adj" data-d="'+gg.d.id+'"><span>'+esc(gg.d.nome)+'</span><span style="display:flex;gap:10px;align-items:center"><span class="cnt">'+(n?n+(n===1?' item':' itens'):'tudo certo')+'</span><span class="arr">▾</span></span></button><div class="adj-b">';
+    if(!n) h+='<div class="allok">✔ Tudo nesta dimensão está plenamente atendido.</div>';
+    for(j=0;j<gg.zeros.length;j++) h+='<div class="ai z0"><span class="ic">✘</span><span>'+esc(gg.zeros[j])+'</span></div>';
+    for(j=0;j<gg.partials.length;j++) h+='<div class="ai z1"><span class="ic">◐</span><span>'+esc(gg.partials[j])+'</span></div>';
+    h+='</div></div>';
+  }
+  h+='</div>';
+  /* 5) primeiros passos */
+  pct=st.total?Math.round(st.done/st.total*100):0;
+  h+='<div class="card screen-only"><div class="eyebrow">Primeiros passos</div><div class="h2">🛠 '+(wd.length?'Seus '+wd.length+(wd.length===1?' exercício':' exercícios')+' para começar':'Nenhuma lacuna encontrada')+'</div>';
+  if(!wd.length){
+    h+='<p class="sub">Todas as dimensões estão plenamente atendidas. O passo seguinte é transformar essa expertise em minicurso.</p></div>';
+  } else {
+    h+='<p class="sub">Escolhemos os exercícios das suas dimensões mais fracas. O que você escrever aqui já é conhecimento sendo colocado em palavras, e fica salvo neste navegador.</p>'
+     +'<div class="plan-prog"><div class="track"><div class="fill" id="planFill" style="width:'+pct+'%"></div></div><span class="txt" id="planTxt">'+st.done+' de '+st.total+' tarefas concluídas</span></div>';
+    for(i=0;i<wd.length;i++){
+      var d2=wd[i], x=EXS[d2.id];
+      h+='<div class="step"><div class="step-h"><span class="sn">'+(i+1)+'</span><div><div class="st">'+esc(x.titulo)+'</div><div class="ss">Fortalece: '+esc(d2.nome)+' · cerca de '+esc(x.tempo)+'</div></div></div>'
+       +'<p class="why">'+esc(x.porque)+'</p>'+(x.dica?'<div class="tip">'+esc(x.dica)+'</div>':'');
+      for(j=0;j<x.blocos.length;j++) h+=blockHTML(x.blocos[j]);
+      h+='</div>';
+    }
+    h+='<div class="callout cl-yellow"><b>📌 Depois dos exercícios:</b> refaça este diagnóstico e veja o seu escore subir.<div style="margin-top:12px"><button type="button" class="btn btn-ghost btn-sm" data-act="reapply">↻ Refazer este diagnóstico</button></div></div></div>';
+  }
+  /* 6) mapa das expertises */
+  var dl=doneList();
+  if(dl.length>=2){
+    var bi=bestIndex();
+    h+='<div class="card screen-only"><div class="h3">🗺️ Mapa das minhas expertises</div><p class="sub" style="margin-bottom:12px">Compare as expertises que você já diagnosticou. A de maior escore é a mais pronta para virar minicurso agora.</p>';
+    for(i=0;i<dl.length;i++){ var ex=S.exps[dl[i]]; h+=mapRow(ex,dl[i],false).replace('<div class="mn">'+esc(ex.nome)+'</div>','<div class="mn">'+esc(ex.nome)+(dl[i]===bi?'<span class="best">mais pronta agora</span>':'')+'</div>'); }
+    h+='</div>';
+  }
+  /* 7) CTA */
+  h+='<div class="cta screen-only"><div class="h3">'+esc(CTA_TITULO)+'</div><p>'+esc(CTA_MSG)+'</p>'
+   +(CTA_URL?'<a class="btn" href="'+esc(CTA_URL)+'" target="_blank" rel="noopener">'+esc(CTA_BTN)+'</a>':'')+'</div>';
+  /* 8) observação */
+  h+='<div class="obs screen-only"><b>✅ Lembrete importante</b><br>Todo saber de quem tem anos de estrada começa tácito. Explicitá-lo é um trabalho de organização, não de talento, e é isso que torna a experiência ensinável.</div>';
+  /* 9) ações */
+  h+='<div class="report-actions screen-only"><button type="button" class="btn btn-primary" data-act="copy">📋 Copiar meu diagnóstico</button>'
+   +'<button type="button" class="btn btn-green" data-act="print">🖨️ Imprimir / Salvar PDF</button>'
+   +'<button type="button" class="btn btn-ghost" data-act="other">＋ Diagnosticar outra expertise</button>'
+   +'<button type="button" class="btn btn-ghost" data-act="reapply">↻ Refazer este diagnóstico</button></div>';
+  h+='<div class="print-only" id="printSum"></div></div>';
+  return h;
+}
+
+/* ---------- resumo (cópia / impressão) ---------- */
+function planLines(e){
+  var out=[], P=e.plan, wd=weakDims(e), i, j, k;
+  for(i=0;i<wd.length;i++){
+    var x=EXS[wd[i].id]; out.push({t:'h',v:(i+1)+'. '+x.titulo+' ('+wd[i].nome+')'});
+    for(j=0;j<x.blocos.length;j++){
+      var y=x.blocos[j];
+      if(y.k==='check') out.push({t:'c',v:y.txt,on:!!P.tasks[y.id]});
+      if(y.k==='field') out.push({t:'f',lab:y.label||'',v:(P.fields[y.id]||'').trim()});
+      if(y.k==='choice') out.push({t:'f',lab:y.label||'',v:P.choices[y.id]||''});
+      if(y.k==='list'){ var ls=P.lists[y.id]||[]; out.push({t:'l',lab:y.label||''}); if(!ls.length) out.push({t:'n',v:'(ainda não preenchido)'}); for(k=0;k<ls.length;k++) out.push({t:'n',v:(k+1)+'. '+ls[k]}); }
+    }
+  }
+  return out;
+}
+function summaryText(){
+  var e=E(), sc=total(e), max=maxScore(), b=bandOf(sc), st=planStats(e), p=explicitPct(e), lv=levelOf(p), L=[], i, j, groups=adjustGroups(e);
+  L.push('DIAGNÓSTICO RÁPIDO DE EXPERTISE','Expertise: '+e.nome,'Data: '+today(),'');
+  L.push('ESCORE: '+sc+' / '+max+' — '+b.nome+' ('+b.faixa+')',b.resumo,'');
+  L.push('TERMÔMETRO TÁCITO → EXPLÍCITO: '+p+'% — '+lv.nome,lv.txt,'','PERFIL POR DIMENSÃO');
+  for(i=0;i<groups.length;i++) L.push('- '+groups[i].d.nome+': '+groups[i].score+'/'+(groups[i].d.itens.length*2));
+  L.push('','O QUE AJUSTAR'); var any=false;
+  for(i=0;i<groups.length;i++){ var g=groups[i]; if(!g.zeros.length&&!g.partials.length) continue; any=true; L.push(g.d.nome+':');
+    for(j=0;j<g.zeros.length;j++) L.push('  ✘ '+g.zeros[j]); for(j=0;j<g.partials.length;j++) L.push('  ◐ '+g.partials[j]); }
+  if(!any) L.push('Tudo foi atendido plenamente.');
+  L.push('','AÇÃO RECOMENDADA'); for(i=0;i<b.acao.length;i++) L.push('- '+b.acao[i]);
+  L.push('','PRIMEIROS PASSOS ('+st.done+' de '+st.total+' tarefas concluídas)');
+  var pl=planLines(e);
+  for(i=0;i<pl.length;i++){ var x=pl[i];
+    if(x.t==='h') L.push('',x.v);
+    else if(x.t==='c') L.push('  ['+(x.on?'x':' ')+'] '+x.v);
+    else if(x.t==='n') L.push('    '+x.v);
+    else if(x.t==='l'){ if(x.lab) L.push('  '+x.lab); }
+    else if(x.t==='f'){ if(x.lab) L.push('  '+x.lab); L.push('    → '+(x.v||'(ainda não preenchido)')); }
+  }
+  var dl=doneList();
+  if(dl.length>=2){ L.push('','MAPA DAS MINHAS EXPERTISES'); for(i=0;i<dl.length;i++){ var ex=S.exps[dl[i]]; L.push('- '+ex.nome+': '+total(ex)+'/'+max+' ('+explicitPct(ex)+'% explícito)'+(dl[i]===bestIndex()?'  ← mais pronta agora':'')); } }
+  L.push('','Todo saber de quem tem anos de estrada começa tácito. Explicitá-lo é um trabalho de organização, e é isso que torna a experiência ensinável.');
+  return L.join('\n');
+}
+function summaryHTML(){
+  var e=E(), sc=total(e), max=maxScore(), b=bandOf(sc), st=planStats(e), p=explicitPct(e), lv=levelOf(p), h='', i, j, groups=adjustGroups(e);
+  h+='<div class="ps"><div class="ps-t">Diagnóstico Rápido de Expertise</div><div class="ps-s">Expertise: '+esc(e.nome)+' · '+esc(today())+'</div>';
+  h+='<div class="ps-score">'+sc+' / '+max+' — '+esc(b.nome)+'</div><div>'+esc(b.faixa)+'. '+esc(b.resumo)+'</div>';
+  h+='<h4>Termômetro: do saber tácito ao explícito</h4><div><b>'+p+'% — '+esc(lv.nome)+'.</b> '+esc(lv.txt)+'</div>';
+  h+='<h4>Perfil por dimensão</h4><ul>'; for(i=0;i<groups.length;i++) h+='<li>'+esc(groups[i].d.nome)+': <b>'+groups[i].score+'/'+(groups[i].d.itens.length*2)+'</b></li>'; h+='</ul>';
+  h+='<h4>O que ajustar</h4>'; var any=false;
+  for(i=0;i<groups.length;i++){ var g=groups[i]; if(!g.zeros.length&&!g.partials.length) continue; any=true; h+='<div><b>'+esc(g.d.nome)+'</b><ul>';
+    for(j=0;j<g.zeros.length;j++) h+='<li>✘ '+esc(g.zeros[j])+'</li>'; for(j=0;j<g.partials.length;j++) h+='<li>◐ '+esc(g.partials[j])+'</li>'; h+='</ul></div>'; }
+  if(!any) h+='<div>Tudo foi atendido plenamente.</div>';
+  h+='<h4>Ação recomendada</h4><ul>'; for(i=0;i<b.acao.length;i++) h+='<li>→ '+esc(b.acao[i])+'</li>'; h+='</ul>';
+  h+='<h4>Primeiros passos ('+st.done+' de '+st.total+' tarefas concluídas)</h4>';
+  var pl=planLines(e);
+  for(i=0;i<pl.length;i++){ var x=pl[i];
+    if(x.t==='h') h+='<div style="margin-top:8px"><b>'+esc(x.v)+'</b></div>';
+    else if(x.t==='c') h+='<div>'+(x.on?'☑':'☐')+' '+esc(x.v)+'</div>';
+    else if(x.t==='n') h+='<div style="margin-left:14px">'+esc(x.v)+'</div>';
+    else if(x.t==='l'){ if(x.lab) h+='<div><i>'+esc(x.lab)+'</i></div>'; }
+    else if(x.t==='f'){ if(x.lab) h+='<div><i>'+esc(x.lab)+'</i></div>'; h+='<div class="txt">'+(x.v?esc(x.v):'(ainda não preenchido)')+'</div>'; }
+  }
+  var dl=doneList();
+  if(dl.length>=2){ h+='<h4>Mapa das minhas expertises</h4><ul>'; for(i=0;i<dl.length;i++){ var ex=S.exps[dl[i]]; h+='<li>'+esc(ex.nome)+': <b>'+total(ex)+'/'+max+'</b> ('+explicitPct(ex)+'% explícito)'+(dl[i]===bestIndex()?' ← mais pronta agora':'')+'</li>'; } h+='</ul>'; }
+  h+='<p style="margin-top:14px;font-size:12px;color:#666">Todo saber de quem tem anos de estrada começa tácito. Explicitá-lo é um trabalho de organização, e é isso que torna a experiência ensinável.</p></div>';
+  return h;
+}
+function fillPrint(){ var el=$('printSum'); if(el) el.innerHTML=summaryHTML(); }
+function copyText(text){
+  var ok=function(){toast('✅ Diagnóstico copiado!');};
+  var fallback=function(){
+    try{
+      var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.cssText='position:fixed;left:-9999px;top:0;opacity:0';
+      APP.appendChild(ta); ta.select(); var r=document.execCommand('copy'); APP.removeChild(ta);
+      if(r) ok(); else toast('Não foi possível copiar automaticamente. Use “Imprimir / Salvar PDF”.');
+    }catch(e){ toast('Não foi possível copiar automaticamente. Use “Imprimir / Salvar PDF”.'); }
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok,fallback); } else { fallback(); }
+}
+
+/* ---------- render / navegação ---------- */
+function render(){
+  setHero();
+  VIEW.innerHTML = S.view==='check' ? viewCheck() : (S.view==='result' ? viewResult() : viewWelcome());
+  if(S.view==='result'){ fillPrint(); }
+  save();
+}
+function go(view,step){ S.view=view; if(typeof step==='number') S.step=step; render(); toTop(); }
+function finishCheck(){
+  var e=E(), key=JSON.stringify(e.ans);
+  if(e.histKey!==key){ e.hist.push({s:total(e),d:today()}); e.histKey=key; }
+  e.done=true; go('result');
+}
+function nextStep(){
+  var e=E(), d=DIMS[S.step], miss=[], i;
+  for(i=0;i<d.itens.length;i++){ if(typeof e.ans[ansKey(d.id,i)]!=='number') miss.push(i); }
+  if(miss.length){
+    for(i=0;i<d.itens.length;i++){ var el=$('it_'+d.id+'_'+i); if(el){ if(miss.indexOf(i)>=0) el.classList.add('missing'); else el.classList.remove('missing'); } }
+    var w=$('warn'); w.textContent='Responda todas as afirmações para continuar. Faltam '+miss.length+(miss.length===1?' afirmação':' afirmações')+' nesta dimensão.'; w.classList.add('show');
+    var first=$('it_'+d.id+'_'+miss[0]); if(first){ try{first.scrollIntoView({behavior:'smooth',block:'center'});}catch(e2){} }
+    return;
+  }
+  if(S.step<DIMS.length-1){ go('check',S.step+1); } else { finishCheck(); }
+}
+function armBtn(el,key,label){
+  if(armed[key]&&Date.now()-armed[key]<4500){ armed[key]=0; return true; }
+  armed[key]=Date.now(); var old=el.textContent; el.textContent=label;
+  setTimeout(function(){ armed[key]=0; if(el&&el.parentNode) el.textContent=old; },4500);
+  return false;
+}
+function resetAll(){ S.exps=[]; S.cur=-1; S.step=0; S.tmp=''; S.view='welcome'; render(); toTop(); }
+
+/* ---------- eventos ---------- */
+APP.addEventListener('click',function(e){
+  var el=e.target.closest?e.target.closest('[data-act]'):null; if(!el||!APP.contains(el)) return;
+  var act=el.getAttribute('data-act'), id=el.getAttribute('data-id'), i, cur;
+  if(act==='chk'||act==='fld'||act==='nome') return;
+  if(act==='start'){
+    var inp=$('nomeExp'), nm=((inp&&inp.value)||S.tmp||'').trim();
+    if(!nm){ var wn=$('warnName'); if(wn) wn.classList.add('show'); if(inp) inp.focus(); return; }
+    S.exps.push(newExp(nm)); S.cur=S.exps.length-1; S.tmp=''; go('check',0);
+  }
+  else if(act==='open'){ S.cur=parseInt(el.getAttribute('data-i'),10); var ex=E(); if(ex.done) go('result'); else { var inc=firstIncomplete(ex); go('check',inc<0?0:inc); } }
+  else if(act==='del'){
+    var di=parseInt(el.getAttribute('data-i'),10);
+    if(armBtn(el,'del'+di,'Confirmar?')){ S.exps.splice(di,1); S.cur=S.exps.length?Math.min(S.cur,S.exps.length-1):-1; render(); }
+  }
+  else if(act==='reset'){ if(armBtn(el,'reset','Clique de novo para apagar tudo')) resetAll(); }
+  else if(act==='back'){ if(S.step>0) go('check',S.step-1); else go('welcome'); }
+  else if(act==='next'){ nextStep(); }
+  else if(act==='ans'){
+    cur=E(); var d=el.getAttribute('data-d'), idx=el.getAttribute('data-i'), v=parseInt(el.getAttribute('data-v'),10);
+    cur.ans[d+'_'+idx]=v;
+    var box=el.parentNode.querySelectorAll('.opt'); for(i=0;i<box.length;i++){ var on=(box[i]===el); box[i].classList.toggle('on',on); box[i].setAttribute('aria-pressed',on?'true':'false'); }
+    var item=$('it_'+d+'_'+idx); if(item) item.classList.remove('missing');
+    var w=$('warn'); if(w&&!VIEW.querySelector('.item.missing')) w.classList.remove('show');
+    updateCheckMeta(); save();
+  }
+  else if(act==='adj'){
+    var dd=el.getAttribute('data-d'), box2=$('adj_'+dd), isOpen=box2.classList.toggle('open'); E().openAdj[dd]=isOpen; save();
+  }
+  else if(act==='choice'){
+    E().plan.choices[id]=el.getAttribute('data-v');
+    var sib=el.parentNode.querySelectorAll('.chip'); for(i=0;i<sib.length;i++){ var o=(sib[i]===el); sib[i].classList.toggle('on',o); sib[i].setAttribute('aria-pressed',o?'true':'false'); }
+    refreshPlanProgress(); save();
+  }
+  else if(act==='ladd'){
+    var inp2=$('li_'+id), val=(inp2.value||'').trim(); if(!val){ inp2.focus(); return; }
+    var arr=E().plan.lists[id]=E().plan.lists[id]||[]; arr.push(val); inp2.value='';
+    $('list_'+id).innerHTML=listInner(id); refreshPlanProgress(); save(); inp2.focus();
+  }
+  else if(act==='ldel'||act==='lup'||act==='ldown'){
+    var a2=E().plan.lists[id]||[], k=parseInt(el.getAttribute('data-i'),10);
+    if(act==='ldel') a2.splice(k,1);
+    else if(act==='lup'&&k>0){ var t1=a2[k-1]; a2[k-1]=a2[k]; a2[k]=t1; }
+    else if(act==='ldown'&&k<a2.length-1){ var t2=a2[k+1]; a2[k+1]=a2[k]; a2[k]=t2; }
+    $('list_'+id).innerHTML=listInner(id); refreshPlanProgress(); save();
+  }
+  else if(act==='copy'){ copyText(summaryText()); }
+  else if(act==='print'){ fillPrint(); window.print(); }
+  else if(act==='other'){ go('welcome'); }
+  else if(act==='reapply'){ cur=E(); cur.ans={}; cur.done=false; go('check',0); }
+});
+APP.addEventListener('change',function(e){
+  var el=e.target; if(!el.getAttribute||el.getAttribute('data-act')!=='chk') return;
+  E().plan.tasks[el.getAttribute('data-id')]=!!el.checked;
+  var row=el.closest('.chk-row'); if(row) row.classList.toggle('on',!!el.checked);
+  refreshPlanProgress(); save();
+});
+APP.addEventListener('input',function(e){
+  var el=e.target; if(!el.getAttribute) return; var act=el.getAttribute('data-act');
+  if(act==='nome'){ S.tmp=el.value; var wn=$('warnName'); if(wn&&el.value.trim()) wn.classList.remove('show'); save(); }
+  else if(act==='fld'){ E().plan.fields[el.getAttribute('data-id')]=el.value; refreshPlanProgress(); save(); }
+});
+APP.addEventListener('keydown',function(e){
+  var el=e.target; if(e.key!=='Enter'||!el.getAttribute) return;
+  var id=el.getAttribute('data-lin');
+  if(id){ e.preventDefault(); var b=VIEW.querySelector('[data-act="ladd"][data-id="'+id+'"]'); if(b) b.click(); return; }
+  if(el.getAttribute('data-act')==='nome'){ e.preventDefault(); var sb=VIEW.querySelector('[data-act="start"]'); if(sb) sb.click(); }
+});
+
+/* início: sempre mostra a boas-vindas (com os diagnósticos salvos, se houver) */
+S.view='welcome';
+render();
+
+
+window.ExpertiseKit={blankPlan:blankPlan,newExp:newExp,loadState:loadState,save:save,storageOk:storageOk,E:E,esc:esc,ansKey:ansKey,dimScore:dimScore,dimById:dimById,total:total,answered:answered,totalItems:totalItems,maxScore:maxScore,dimAnswered:dimAnswered,bandOf:bandOf,firstIncomplete:firstIncomplete,explicitPct:explicitPct,levelOf:levelOf,tone:tone,weakDims:weakDims,today:today,toTop:toTop,toast:toast,pctPos:pctPos,setHero:setHero,mapRow:mapRow,viewWelcome:viewWelcome,viewCheck:viewCheck,updateCheckMeta:updateCheckMeta,planStats:planStats,listInner:listInner,blockHTML:blockHTML,refreshPlanProgress:refreshPlanProgress,adjustGroups:adjustGroups,doneList:doneList,bestIndex:bestIndex,viewResult:viewResult,planLines:planLines,summaryText:summaryText,summaryHTML:summaryHTML,fillPrint:fillPrint,copyText:copyText,render:render,go:go,finishCheck:finishCheck,nextStep:nextStep,armBtn:armBtn,resetAll:resetAll,byId:byId};
+})();
+</script>
